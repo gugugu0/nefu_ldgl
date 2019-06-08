@@ -1,3 +1,4 @@
+#coding:utf-8
 from app import db
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -14,15 +15,16 @@ class Vuln(db.Model):
     publish_date = db.Column(db.Date, index=True, default=datetime.datetime.now())
     fix_date = db.Column(db.Date, index=True, default=datetime.datetime.now())
     organization = db.Column(db.String(64), default=u'unknown')
-    status = db.Column(db.Integer, index=True)
+    status = db.Column(db.Integer, default=0, index=True)
     annex = db.Column(db.Text) # 附件名
 
 
 
     @staticmethod
     def insert_ont_test():
-        vuln = Vuln(title=u'test vuln 1', describe=u'this is a test vuln')
-
+        vuln = Vuln(title=u'test vuln 1', describe=u'this is a test vuln',\
+                    fix_date=datetime.datetime.now(),publish_date=datetime.datetime.now(), \
+                    rank=1, type=1, organization='NSI', status=0, annex='fujian.doc')
         db.session.add(vuln)
         db.session.commit()
 
@@ -59,6 +61,7 @@ class User(UserMixin, db.Model):
 class PlatformInfo(db.Model):
     __tablename__ = 'platform_info'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64))
     about = db.Column(db.Text)
     help = db.Column(db.Text)
 

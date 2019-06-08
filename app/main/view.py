@@ -2,13 +2,27 @@
 from flask import render_template, request, current_app, redirect,\
     url_for
 from . import main
-from ..models import Vuln#, PlatInfo
+from ..models import Vuln, PlatformInfo
 from .. import db
 
 @main.route('/index')
 def index():
-    # Vuln.add_view(db)
-    #bloginfo = PlatInfo.query.first()
-    #title = bloginfo.title
-    #gongao =
-    return render_template('index.html', endpoint='.index')
+    platformInfo = PlatformInfo.query.first()
+    about = platformInfo.about
+    help = platformInfo.help
+    title = platformInfo.title
+    return render_template('index.html', help=help, about=about, title=title)
+
+@main.route('/')
+def index0():
+    return redirect(url_for('main.index'))
+
+
+@main.route('/about')
+def about():
+        return render_template('about.html')
+
+
+@main.route('/help')
+def about():
+        return render_template('help.html')
