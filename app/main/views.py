@@ -11,7 +11,12 @@ def index():
     about = platformInfo.about
     help = platformInfo.help
     title = platformInfo.title
-    return render_template('index.html', help=help, about=about, title=title)
+    page = request.args.get('page', 1, type=int)
+    vulns = Vuln.query.order_by(Vuln.publish_date.desc()).paginate(
+        page, per_page=current_app.config['VULNERABILITY_PER_PAGE'],
+        error_out=False
+    ).items
+    return render_template('index.html', vulns=vulns, help=help, about=about, title=title)
 
 @main.route('/')
 def index0():
