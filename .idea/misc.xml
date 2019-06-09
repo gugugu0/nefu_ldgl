@@ -4,7 +4,10 @@
     <option name="languageLevel" value="ES6" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6 (nefu_ldgl)" project-jdk-type="Python SDK" />
+<<<<<<< Updated upstream
   <component name="PythonCompatibilityInspectionAdvertiser">
     <option name="version" value="3" />
   </component>
+=======
+>>>>>>> Stashed changes
 </project>
