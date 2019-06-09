@@ -5,14 +5,11 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_migrate import upgrade
 from app.models import User, Vuln, PlatformInfo, Announcement
 
-# 上下文函数
-def make_shell_context():
-    return dict(db=db)
 
 app = create_app()
 manager = Manager(app)
 migrate = Migrate(app, db)
-manager.add_command('ab',MigrateCommand)
+manager.add_command('db',MigrateCommand)
 
 # Jinja2 全局环境变量
 #app.jinja_env.globals['xxx'] = xxx
@@ -33,8 +30,14 @@ def deploy(deploy_type):
     upgrade()
 
     if deploy_type == 'up':
-        User.insert_admin('master@nefu.edu.cn', 'chenye', 'root*chenye', 'NSI')
-        Vuln.insert_one_test()
+        try:
+            PlatformInfo.insert_platform_info()
+            Vuln.insert_ont_test()
+            User.insert_admin('master@nefu.edu.cn', 'chenye', 'root*chenye', 'NSI')
+        except:
+            pass
+
+
 
 
 

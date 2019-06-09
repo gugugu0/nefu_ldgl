@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="教育行业漏洞报告平台是一个行业性漏洞报告平台。">
+  <meta name="keywords" content="安全,教育,漏洞,报告,平台,高校">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>{{ title }}</title>
+
+  <link rel="icon" type="image/ico" href="/static/img/main.ico">
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="教育行业漏洞报告平台（Beta）"/>
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.min.css" />
+  
+  <link rel="stylesheet" href="/static/css/archive.css">
+  
+</head>
+<body>
+<header class="am-topbar am-g am-g-collapse">
+<div class="am-container">
+  <div class="am-u-sm-centered">
+  <h1 class="am-topbar-brand">
+    <a href="/">教育行业漏洞报告平台（Beta）</a>
+  </h1>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}">
+      <span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+  </button>
+
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li class="am-active"><a href="/">首页</a></li>
+      <li ><a href="/list/">漏洞列表</a></li>
+      <li class="am-dropdown" data-am-dropdown >
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          排行榜 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li ><a href="/rank/firm/">全国高校漏洞排行榜</a></li></li>
+          <li  ><a href="/rank/province/">各省高校漏洞排行榜</a></li></li>
+          <li  ><a href="/user/sum/">用户排行榜</a></li></li>
+        </ul>
+      </li>
+      <li ><a href="/gift/">{{ help }}</a></li>
+      <li ><a href="/introduction/">{{ about }}</a></li>
+    </ul>
+
+    
+    <div class="am-topbar-right">
+      <a class="am-btn am-btn-primary am-topbar-btn am-btn-sm" href="/login/">登录</a>
+    </div>
+    <div class="am-topbar-right">
+      <a class="am-btn am-btn-secondary am-topbar-btn am-btn-sm" href="/register/">注册</a>
+    </div>
+    
+
+  </div>
+  </div>
+</div>
+</header>
+
+<div class="main-body">
+<div class="main-content">
+    
+
+
+<div class="am-news">
+  <div class="am-container">
+    <img class="pic-image news-icon" src="/static/img/speaker.png" />
+    <div class="am-news-voice">
+      <span style="font-weight: bold;">公告：</span>
+    </div>
+    <ul class="newsticker">
+        
+        <li>同一学校公告处泄漏身份证等敏感信息，视情况只收前一到三个</li>
+        
+        <li>同一学校MemCache未授权访问，只收前三个ip，其它ip存在该问题的均算重复</li>
+        
+        <li>教育行业漏洞报告平台Beta白帽子问题交流与反馈QQ群:173990329。</li>
+        
+        <li>近期某通用型建站系统高危漏洞被曝出，针对白帽子批量提交的情况，平台将酌情降低相关漏洞的等级与分值。</li>
+        
+        <li>同一单位多处同类型漏洞，请打包提交，方便校方进行对接和统一处理。</li>
+        
+        <li>平台暂时只接收现有单位的安全问题，对范围之外的漏洞将暂时做忽略处理。</li>
+        
+        <li>漏洞提交规范：标题和简要描述中请规避敏感信息。内容详情部分请务必填写必要的文字说明、利用过程和证明截图。</li>
+        
+        <li>针对近期白帽子反映的平台上大量单位存在域传送漏洞，我们及时进行了收集、整理，现已全部覆盖所有单位的检测，所以平台近期不再接收此类漏洞。</li>
+        
+    </ul>
+  </div>
+</div>
+
+
+<div class="am-container">
+<div class="am-g">
+  <div class="am-u-sm-centered am-u-sm-11">
+  <h2>最新漏洞</h2>
+      
+
+<table class="am-table minos-list am-text-sm am-table-bordered am-table-hover am-scrollable-horizontal">
+  <tr class="null am-primary">
+    <td width="" class="am-text-center am-hide-sm-down">时间</td>
+    <td>标题</td>
+    <td width="" class="am-text-center am-hide-sm-down">等级</td>
+    <td width="" class="am-text-center">作者</td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31357/" >
+        
+        广西壮族自治区教育厅存在其他漏洞
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-danger">严重</span></td>
+    <td class="am-text-center"><a href="/profile/5904/">王老师</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31355/" >
+        
+        河南工业职业技术学院存在文件上传漏洞
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-warning">高危</span></td>
+    <td class="am-text-center"><a href="/profile/6339/">枯叶</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31354/" >
+        
+        大连民族大学存在XSS漏洞
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-secondary">低危</span></td>
+    <td class="am-text-center"><a href="/profile/6337/">applicantj...</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31351/" >
+        
+        昆明学院存在敏感信息泄露
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-primary">中危</span></td>
+    <td class="am-text-center"><a href="/profile/6128/">f0ng</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31349/" >
+        
+        邯郸学院存在敏感信息泄露
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-secondary">低危</span></td>
+    <td class="am-text-center"><a href="/profile/6128/">f0ng</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31343/" >
+        
+        中国海洋大学存在水平权限绕过
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-primary">中危</span></td>
+    <td class="am-text-center"><a href="/profile/6336/">Analogy</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31342/" >
+        
+        长沙商贸旅游职业技术学院存在SQL注入漏洞
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-warning">高危</span></td>
+    <td class="am-text-center"><a href="/profile/5714/">jffffff</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31340/" >
+        
+        沈阳科技学院存在敏感信息泄露
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-secondary">低危</span></td>
+    <td class="am-text-center"><a href="/profile/5904/">王老师</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31338/" >
+        
+        宁夏司法警官职业学院存在敏感信息泄露
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-secondary">低危</span></td>
+    <td class="am-text-center"><a href="/profile/5904/">王老师</a></td>
+  </tr>
+  
+  <tr class="row">
+    <td class="am-text-center am-hide-sm-down">2019-06-07</td>
+    <td class="">
+      <a href="/post/31335/" >
+        
+        安徽农业大学存在SQL注入漏洞
+        
+      </a>
+    </td>
+    <td class="am-text-center am-hide-sm-down"><span class="am-badge am-badge-primary">中危</span></td>
+    <td class="am-text-center"><a href="/profile/5019/">农夫安全_花落忘川丶</a></td>
+  </tr>
+  
+</table>
+
+  </div>
+</div>
+</div>
+
+
+    <div class="main-footer">
+
+
+        2019 © 联系邮箱：<a href="mailto:contact@src.edu-info.edu.cn">contact@src.edu-info.edu.cn</a><br>
+    </div>
+</div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.min.js"></script>
+
+
+<script type="text/javascript" src="/js/"></script>
+
+<script type="text/javascript" src="/static/js/jquery.newsTicker.min.js"></script>
+
+
+</body>
+</html>

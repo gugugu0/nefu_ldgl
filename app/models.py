@@ -66,8 +66,8 @@ class PlatformInfo(db.Model):
     help = db.Column(db.Text)
 
     @staticmethod
-    def insert_announce(about=u'None', help=u'None'):
-        info = PlatformInfo(about=about, help=help)
+    def insert_platform_info(about=u'None', help=u'None', title=u'NEFU漏洞管理平台'):
+        info = PlatformInfo(about=about, help=help, title=title)
         db.session.add(info)
         db.session.commit()
 
