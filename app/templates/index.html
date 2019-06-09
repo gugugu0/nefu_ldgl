@@ -28,7 +28,7 @@
 						<li ><a href="/paihang/">排行榜</a></li>
 						<li ><a href="/introduction/">关于</a></li>
 					</ul>
-					<button class="am-btn am-btn-cebian cebian" data-am-offcanvas="{target: '#doc-oc-demo3'}">公告</button>
+					<li class="am-btn am-btn-cebian cebian" data-am-offcanvas="{target: '#doc-oc-demo3'}">公告</li>
 					<!-- 侧边栏内容 -->
 					<div id="doc-oc-demo3" class="am-offcanvas">
 						<div class="am-offcanvas-bar am-offcanvas-bar-flip">
@@ -79,7 +79,7 @@
 						<table class="am-table minos-list am-text-sm am-table-bordered am-table-hover am-scrollable-horizontal">
 							<tr class="null am-primary">
 								<td width="" class="am-text-center am-hide-sm-down">时间</td>
-								<td width=""class="am-text-center am-hide-sm-down">{{ vulns[0].title }}</td>
+								<td width=""class="am-text-center am-hide-sm-down">标题</td>
 								<td width="" class="am-text-center am-hide-sm-down">等级</td>
 								<td width="" class="am-text-center">组织</td>
 								</tr>
@@ -89,12 +89,12 @@
 
 {% for vuln in vulns %}
     <tr class="row">
-        <td class="am-text-center am-hide-sm-down">{{ vulns.publish_date }}</td>
-        <td class="am-text-center am-hide-sm-down">{{ vulns.title }}</td>
+        <td class="am-text-center am-hide-sm-down">{{ vuln.publish_date }}</td>
+        <td class="am-text-center am-hide-sm-down">{{ vuln.title }}</td>
         <td class="am-text-center am-hide-sm-down">
-            <span class="am-badge am-badge-danger">{{ vulns.rank }}</span>
+            <span class="am-badge am-badge-danger">{{ vuln.rank }}</span>
         </td>
-        <td class="am-text-center">{{ vulns.organization }}</td>
+        <td class="am-text-center">{{ vuln.organization }}</td>
     </tr>
 {% endfor %}
 
