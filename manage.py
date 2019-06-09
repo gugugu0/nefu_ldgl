@@ -1,4 +1,5 @@
 #coding:utf-8
+# 别说话，装库
 from app import db, create_app
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
