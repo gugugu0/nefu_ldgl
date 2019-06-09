@@ -33,7 +33,7 @@ def deploy(deploy_type):
     if deploy_type == 'up':
         try:
             PlatformInfo.insert_platform_info()
-            Vuln.insert_ont_test()
+            Vuln.generate_fake(33)
             User.insert_admin('master@nefu.edu.cn', 'chenye', 'root*chenye', 'NSI')
         except:
             pass

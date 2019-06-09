@@ -19,14 +19,27 @@ class Vuln(db.Model):
     annex = db.Column(db.Text) # 附件名
 
 
-
     @staticmethod
-    def insert_ont_test():
-        vuln = Vuln(title=u'test vuln 1', describe=u'this is a test vuln',\
-                    fix_date=datetime.datetime.now(),publish_date=datetime.datetime.now(), \
-                    rank=1, type=1, organization='NSI', status=0, annex='fujian.doc')
-        db.session.add(vuln)
-        db.session.commit()
+    def generate_fake(count=50):
+        from sqlalchemy.exc import IntegrityError
+        from random import seed, randint
+        import forgery_py
+        seed()
+
+        for i in range(count):
+            vuln = Vuln(title=forgery_py.lorem_ipsum.title(1),
+                        describe=forgery_py.lorem_ipsum.sentences(randint(15, 35)),
+                        publish_date=datetime.datetime.now(),
+                        fix_date=datetime.datetime.now(),
+                        rank=randint(1,4), type=randint(1,8),
+                        organization='NSI', status=randint(0,1),
+                        annex='fujian.doc')
+
+            db.session.add(vuln)
+            try:
+                db.session.commit()
+            except IntegrityError:
+                db.session.rollback()
 
 
 class User(UserMixin, db.Model):
